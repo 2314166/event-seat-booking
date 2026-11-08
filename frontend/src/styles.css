@@ -1,0 +1,39 @@
+:root { --bg:#f5f6fa; --card:#fff; --text:#1d2433; --muted:#6b7385; --primary:#4f46e5; --border:#e3e6ee;
+  --avail:#d1fae5; --availb:#10b981; --sel:#4f46e5; --held:#fde68a; --heldb:#f59e0b; --booked:#cbd5e1; --bookedb:#94a3b8; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--text); }
+main { max-width: 1000px; margin: 0 auto; padding: 24px 16px 60px; }
+h2 { margin: 8px 0 12px; } h3 { margin: 0 0 6px; }
+a { color: var(--primary); }
+.nav { display:flex; align-items:center; gap:16px; padding:10px 20px; background:#fff; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:5; }
+.nav nav { display:flex; gap:14px; } .nav nav a { text-decoration:none; color:var(--muted); padding:4px 2px; }
+.nav nav a.active { color:var(--primary); font-weight:600; border-bottom:2px solid var(--primary); }
+.brand { font-weight:700; text-decoration:none; color:var(--text); } .spacer { flex:1; } .who { font-size:14px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+.card.narrow { max-width:460px; margin:24px auto; } .panel { margin-top:18px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:16px; }
+.row { display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; } .row.between { justify-content:space-between; align-items:center; }
+label { display:block; font-size:14px; margin-bottom:10px; flex:1; } label input, label textarea { display:block; width:100%; margin-top:4px; }
+input, textarea { font:inherit; padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:#fff; }
+button, .btn { font:inherit; padding:8px 14px; border-radius:8px; border:1px solid var(--border); background:#fff; cursor:pointer; text-decoration:none; color:var(--text); display:inline-block; }
+button.primary, .btn.primary { background:var(--primary); color:#fff; border-color:var(--primary); }
+button:disabled { opacity:.5; cursor:not-allowed; }
+.muted { color:var(--muted); } .small { font-size:13px; } .error { color:#b91c1c; } .ok { color:#047857; }
+.badge { font-size:12px; padding:2px 8px; border-radius:999px; background:#eef0f6; color:var(--muted); text-transform:capitalize; }
+.badge.confirmed { background:#d1fae5; color:#065f46; } .badge.held { background:#fef3c7; color:#92400e; }
+.badge.cancelled { background:#fee2e2; color:#991b1b; } .badge.expired { background:#e5e7eb; color:#4b5563; }
+.bar { height:6px; background:#eef0f6; border-radius:4px; overflow:hidden; } .bar .fill { height:100%; background:var(--primary); }
+.demo { margin-top:14px; padding-top:12px; border-top:1px dashed var(--border); display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; }
+.legend { display:flex; gap:16px; align-items:center; flex-wrap:wrap; font-size:13px; margin:10px 0; }
+.stage { text-align:center; background:#e5e7eb; color:var(--muted); border-radius:6px; padding:6px; font-size:12px; letter-spacing:2px; margin:10px auto 14px; max-width:600px; }
+.map { overflow-x:auto; padding-bottom:8px; } .maprow { display:flex; gap:5px; align-items:center; justify-content:center; margin-bottom:5px; min-width:max-content; }
+.rowlabel { width:26px; text-align:center; font-size:12px; color:var(--muted); }
+.seat { width:30px; height:30px; padding:0; border-radius:6px 6px 3px 3px; font-size:11px; border:1.5px solid; display:inline-block; vertical-align:middle; }
+i.seat { width:18px; height:18px; margin-right:4px; }
+.seat.available { background:var(--avail); border-color:var(--availb); color:#065f46; cursor:pointer; }
+.seat.available:hover { background:#a7f3d0; }
+.seat.selected { background:var(--sel); border-color:var(--sel); color:#fff; }
+.seat.held { background:var(--held); border-color:var(--heldb); color:#92400e; cursor:not-allowed; opacity:1; }
+.seat.booked { background:var(--booked); border-color:var(--bookedb); color:#64748b; cursor:not-allowed; opacity:1; }
+.seat.mine { box-shadow:0 0 0 2px var(--primary); }
+.countdown { font-size:22px; font-variant-numeric:tabular-nums; } .countdown.low { color:#b91c1c; }
